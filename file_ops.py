@@ -6,10 +6,9 @@ def read_file(file_name):
         return contents
 
 def read_file_into_list(file_name):
-    """Reads in a file and stores each line as an element in a list."""
-    with open(file_name, 'r') as file:
-        lines = file.readlines()
-        return [line.strip() for line in lines]
+    """ Reads in a file and stores each line as an element in a list """
+    with open(file_name, 'r') as f:
+        return f.readlines()
 
 def write_first_line_to_file(file_contents, output_filename):
     """Writes the first line of a string to a file."""
@@ -18,18 +17,17 @@ def write_first_line_to_file(file_contents, output_filename):
         file.write(first_line)
 
 def read_even_numbered_lines(file_name):
-    """Reads in the even numbered lines of a file."""
-    with open(file_name, 'r') as file:
-        lines = file.readlines()
-        return [line.strip() for i, line in enumerate(lines, 1) if i % 2 == 0]
+    """ Reads in the even numbered lines of a file """
+    with open(file_name, 'r') as f:
+        lines = f.readlines()
+    return [lines[i] for i in range(1, len(lines), 2)]
 
 def read_file_in_reverse(file_name):
-    """Reads a file and returns a list of the lines in reverse order."""
-    with open(file_name, 'r') as file:
-        lines = file.readlines()
-        reversed_lines = lines[::-1]
-        print(reversed_lines)
-        return [line.strip() for line in reversed_lines]
+    """ Reads a file and returns a list of the lines in reverse order """
+    with open(file_name, 'r') as f:
+        lines = f.readlines()
+    return lines[::-1]
+
 
 
 def main():
